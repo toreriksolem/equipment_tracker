@@ -1,0 +1,93 @@
+// data/equipmentData.js
+
+export default [
+    {
+      name: 'Fender Twin Reverb',
+      type: 'Guitar Amp',
+      status: 'Working alright',
+      problems: ['Slight hum at high volume', 'Loose power cord'],
+      imageUrl: '',
+      lastUpdated: '2025-06-30',
+    },
+    {
+      name: 'Shure SM58',
+      type: 'Microphone',
+      status: 'Mint condition',
+      problems: [],
+      imageUrl: '',
+      lastUpdated: '2025-06-28',
+    },
+    {
+      name: 'Yamaha DSR112',
+      type: 'Monitor Speaker',
+      status: 'Send for fix',
+      problems: ['No sound output', 'LED flickers'],
+      imageUrl: '',
+      lastUpdated: '2025-06-25',
+    },
+    {
+      name: 'AKG C414 XLII',
+      type: 'Microphone',
+      status: 'Being fixed',
+      problems: ['Crackling noise on peaks'],
+      imageUrl: '',
+      lastUpdated: '2025-06-22',
+    },
+    {
+      name: 'Marshall JCM800',
+      type: 'Guitar Amp',
+      status: 'Working alright',
+      problems: [],
+      imageUrl: '',
+      lastUpdated: '2025-06-20',
+    },
+    {
+      name: 'Sennheiser e945',
+      type: 'Microphone',
+      status: 'Mint condition',
+      problems: [],
+      imageUrl: '',
+      lastUpdated: '2025-06-18',
+    },
+    {
+      name: 'Roland JC-120',
+      type: 'Guitar Amp',
+      status: 'Fetch',
+      problems: ['Tremolo not working', 'Dust buildup'],
+      imageUrl: '',
+      lastUpdated: '2025-06-15',
+    },
+    {
+      name: 'Behringer DI100',
+      type: 'DI Box',
+      status: 'Working alright',
+      problems: [],
+      imageUrl: '',
+      lastUpdated: '2025-06-10',
+    },
+    {
+      name: 'K&M 210/9',
+      type: 'Mic Stand',
+      status: 'Mint condition',
+      problems: [],
+      imageUrl: '',
+      lastUpdated: '2025-06-07',
+    },
+    {
+      name: 'Radial J48',
+      type: 'DI Box',
+      status: 'Send for fix',
+      problems: ['XLR output intermittent'],
+      imageUrl: '',
+      lastUpdated: '2025-06-05',
+    },
+    {
+      name: 'Audio-Technica AT4050',
+      type: 'Microphone',
+      status: 'Being fixed',
+      problems: ['Low output level', 'Capsule rattle'],
+      imageUrl: '',
+      lastUpdated: '2025-06-01',
+    }
+  ];
+  
