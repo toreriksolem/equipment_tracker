@@ -33,7 +33,7 @@
       direction="vertical"
       :slides-per-view="1.2"
       :space-between="20"
-      class="h-auto"
+      class="h-[75vh]"
     >
       <SwiperSlide
         v-for="(item, index) in filteredList"
