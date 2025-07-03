@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-white py-2 flex flex-col items-center">
+  <div class="bg-black py-2 flex flex-col items-center">
     <img src="/logo.png" alt="Logo" class="h-16 object-contain" />
   </div>
 
