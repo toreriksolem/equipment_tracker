@@ -33,7 +33,8 @@
       direction="vertical"
       :slides-per-view="1.2"
       :space-between="20"
-      class="h-[75vh]"
+      class="h-[75vh] px-4 py-6"
+      :centered-slides="true"
     >
       <SwiperSlide
         v-for="(item, index) in filteredList"
@@ -43,6 +44,7 @@
         <EquipmentCard :equipment="item" @updated="fetchEquipment" />
       </SwiperSlide>
     </Swiper>
+
 
 
 
