@@ -1,5 +1,5 @@
 <template>
-  <div class="p-4 rounded-2xl shadow bg-white border h-[600px] flex flex-col justify-between">
+  <div class="p-4 rounded-2xl shadow bg-white border">
     <img
       v-if="equipment.imageUrl"
       :src="equipment.imageUrl"

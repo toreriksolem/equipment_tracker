@@ -30,16 +30,13 @@
     </div>
 
     <Swiper
-      direction="vertical"
-      :slides-per-view="1.2"
+      :slides-per-view="1"
       :space-between="20"
-      class="h-[75vh] px-2 py-2"
-      :centered-slides="true"
+      class="h-auto"
     >
       <SwiperSlide
         v-for="(item, index) in filteredList"
         :key="index"
-        class="!h-auto"
       >
         <EquipmentCard :equipment="item" @updated="fetchEquipment" />
       </SwiperSlide>
