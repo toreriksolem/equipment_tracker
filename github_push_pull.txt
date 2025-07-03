@@ -1,0 +1,17 @@
+PULL from GITHUB
+1: I VS Code terminal: naviger inn i mappen prosjektet finnes
+feks cd C:\Users\tor.solem\documents\kode\equipment_tracker
+
+2: git PULL
+
+Filene oppdateres lokalt!
+
+
+
+PUSH to GITHUB
+1: git init
+2: git all .
+3: git commit -m "en eller annen beskrivende kommentar"
+4: git push
+
+Filene oppdateres online!

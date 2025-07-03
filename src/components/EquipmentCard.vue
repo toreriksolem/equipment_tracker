@@ -18,25 +18,23 @@
       Sist endret: {{ formatDate(latestHistoryEntry.date) }}
     </p>
 
-    <button @click="openModal" class="mt-4 px-3 py-1 bg-blue-600 text-white rounded-full text-sm">
+    <button @click="showHistoryModal = true" class="mt-4 px-3 py-1 bg-blue-600 text-white rounded-full text-sm">
       Vis historikk
     </button>
+
     <button @click="showAddEntryModal = true" class="mt-2 px-3 py-1 bg-yellow-500 text-white rounded-full text-sm">
       Endre status
     </button>
 
-    <!-- Fade-animasjon for EquipmentStatusHistoryModal -->
     <transition name="fade">
-      <EquipmentStatusHistoryModal
-        v-if="showModal"
-        :show="showModal"
+      <StatusHistoryModal
+        v-if="showHistoryModal"
+        :show="showHistoryModal"
         :equipment-id="equipment.id"
-        @close="showModal = false"
-        @add-entry="showAddEntryModal = true"
+        @close="showHistoryModal = false"
       />
     </transition>
 
-    <!-- Fade-animasjon for AddEntryModal -->
     <transition name="fade">
       <AddEntryModal
         v-if="showAddEntryModal"
@@ -53,17 +51,17 @@
 import { ref, computed, onMounted } from 'vue';
 import { supabase } from '@/supabase.js';
 import StatusBadge from './StatusBadge.vue';
-import EquipmentStatusHistoryModal from './EquipmentStatusHistoryModal.vue';
+import StatusHistoryModal from './StatusHistoryModal.vue';  // ✅ korrekt navn
 import AddEntryModal from './AddEntryModal.vue';
 
 const props = defineProps({
   equipment: Object
 });
 
-const showModal = ref(false);
-const showAddEntryModal = ref(false);
 const latestHistoryEntry = ref(null);
 const statusList = ref([]);
+const showHistoryModal = ref(false);
+const showAddEntryModal = ref(false);
 
 async function fetchLatestHistoryEntry() {
   const { data, error } = await supabase
@@ -73,11 +71,7 @@ async function fetchLatestHistoryEntry() {
     .order('date', { ascending: false })
     .limit(1);
 
-  if (error) {
-    console.error('❌ Feil ved henting av siste historikk:', error.message);
-  } else {
-    latestHistoryEntry.value = data[0] || null;
-  }
+  if (!error) latestHistoryEntry.value = data[0] || null;
 }
 
 onMounted(async () => {
@@ -89,34 +83,18 @@ onMounted(async () => {
 function handleEntryAdded(newStatus, newDate) {
   if (newStatus) props.equipment.status = newStatus;
   if (newDate) props.equipment.lastUpdated = newDate;
-  fetchLatestHistoryEntry(); // Oppdater kortet med ny historikk
-}
-
-function openModal() {
-  showModal.value = true;
+  fetchLatestHistoryEntry();
 }
 
 function formatDate(dateString) {
   try {
-    const date = new Date(dateString);
     return new Intl.DateTimeFormat('no-NO', {
       year: 'numeric',
       month: 'long',
-      day: 'numeric'
-    }).format(date);
+      day: 'numeric',
+    }).format(new Date(dateString));
   } catch {
     return dateString;
   }
 }
 </script>
-
-<style scoped>
-.fade-enter-active,
-.fade-leave-active {
-  transition: opacity 0.3s ease;
-}
-.fade-enter-from,
-.fade-leave-to {
-  opacity: 0;
-}
-</style>
