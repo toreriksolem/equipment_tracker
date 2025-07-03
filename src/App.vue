@@ -29,7 +29,8 @@
       </button>
     </div>
 
-    <Swiper :slides-per-view="1" :space-between="20" class="max-h-[600px] min-h-[400px]">
+    <Swiper direction="vertical"
+      :slides-per-view="1" :space-between="20" class="max-h-[600px] min-h-[400px]">
       <SwiperSlide v-for="(item, index) in filteredList" :key="index">
         <EquipmentCard :equipment="item" @updated="fetchEquipment" />
       </SwiperSlide>
