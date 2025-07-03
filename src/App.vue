@@ -3,7 +3,7 @@
   <div
     :class="[
       'bg-black flex flex-col items-center justify-end',
-      isStandalone ? 'h-24 py-1' : 'h-32 py-2'
+      isStandalone ? 'h-32 py-1' : 'h-24 py-2'
       ]"
     >
     <img src="/logo.png" alt="Logo" class="h-16 object-contain mb-2" />
@@ -41,7 +41,7 @@
     </Swiper>
 
 
-    <div class="fixed bottom-0 left-0 right-0 bg-white p-4 shadow-md space-y-2 z-40">
+    <div class="fixed bottom-0 left-0 right-0 bg-black p-4 shadow-md space-y-2 z-40">
 
       <div v-if="activeFilters.length" class="flex flex-wrap gap-2 justify-center">
         <button
