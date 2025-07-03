@@ -20,7 +20,7 @@
           <select v-model="form.status" class="w-full p-2 border rounded">
             <option value="">Velg status...</option>
             <option v-for="status in statusOptions" :key="status.id" :value="status.id">
-              {{ status.label }}
+              {{ status.combined }}
             </option>
           </select>
 
