@@ -30,7 +30,7 @@
     </div>
 
     <Swiper direction="vertical"
-      :slides-per-view="1" :space-between="20" class="max-h-[600px] min-h-[400px]">
+      :slides-per-view="1" :space-between="20" class="h-[calc(var(--app-height)_*_0.75)]">
       <SwiperSlide v-for="(item, index) in filteredList" :key="index">
         <EquipmentCard :equipment="item" @updated="fetchEquipment" />
       </SwiperSlide>
@@ -89,12 +89,32 @@
 </template>
 
 <script setup>
-import { ref, computed, onMounted } from 'vue';
+import { ref, computed, onMounted, onBeforeUnmount } from 'vue';
 import { Swiper, SwiperSlide } from 'swiper/vue';
 import 'swiper/css';
 import EquipmentCard from './components/EquipmentCard.vue';
 import AddEquipmentModal from './components/AddEquipmentModal.vue';
 import { supabase } from './supabase.js';
+
+
+onMounted(() => {
+  const updateAppHeight = () => {
+    document.documentElement.style.setProperty('--app-height', `${window.innerHeight}px`);
+  };
+
+  updateAppHeight();
+  window.addEventListener('resize', updateAppHeight);
+});
+
+onBeforeUnmount(() => {
+  window.removeEventListener('resize', updateAppHeight);
+});
+
+
+
+
+
+
 
 const equipmentList = ref([]);
 const showAddEquipmentModal = ref(false);
