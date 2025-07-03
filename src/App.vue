@@ -3,7 +3,7 @@
   <div
     :class="[
       'bg-black flex flex-col items-center justify-end',
-      isStandalone ? 'h-32 py-1' : 'h-24 py-2'
+      isStandalone ? 'h-32 py-1' : 'h-16 py-1'
       ]"
     >
     <img src="/logo.png" alt="Logo" class="h-16 object-contain mb-2" />
