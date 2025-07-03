@@ -1,5 +1,11 @@
+
 <template>
-  <div class="bg-black flex flex-col items-center justify-end h-32 py-2">
+  <div
+    :class="[
+      'bg-black flex flex-col items-center justify-end',
+      isStandalone ? 'h-24 py-1' : 'h-32 py-2'
+      ]"
+    >
     <img src="/logo.png" alt="Logo" class="h-16 object-contain mb-2" />
   </div>
 
@@ -109,6 +115,12 @@ const predefinedFilters = [
   { label: 'Hardware', value: 'hardware' },
   { label: 'Div', value: 'div' },
 ];
+
+const isStandalone = ref(false);
+
+onMounted(() => {
+  isStandalone.value = window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone;
+});
 
 async function fetchEquipment() {
   const { data, error } = await supabase.from('equipment').select('*').order('name');
