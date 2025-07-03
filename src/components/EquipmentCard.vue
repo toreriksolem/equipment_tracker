@@ -18,11 +18,11 @@
       Sist endret: {{ formatDate(latestHistoryEntry.date) }}
     </p>
 
-    <button @click="showHistoryModal = true" class="mt-4 px-3 py-1 bg-blue-600 text-white rounded-full text-sm">
+    <button @click="showHistoryModal = true" class="mt-4 mr-2 px-3 py-1 bg-blue-600 text-white rounded-full text-sm">
       Vis historikk
     </button>
 
-    <button @click="showAddEntryModal = true" class="mt-2 px-3 py-1 bg-yellow-500 text-white rounded-full text-sm">
+    <button @click="showAddEntryModal = true" class="mt-2 px-3 py-1 bg-orange-100 text-orange-800 rounded-full text-sm">
       Endre status
     </button>
 
