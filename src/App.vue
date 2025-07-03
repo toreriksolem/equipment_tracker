@@ -30,7 +30,7 @@
     </div>
 
     <Swiper direction="vertical"
-      :slides-per-view="1" :space-between="20" class="h-[calc(var(--app-height)_*_0.75)]">
+      :slides-per-view="1.2" :space-between="20" class="h-[calc(var(--app-height)_*_0.75)]">
       <SwiperSlide v-for="(item, index) in filteredList" :key="index">
         <EquipmentCard :equipment="item" @updated="fetchEquipment" />
       </SwiperSlide>
