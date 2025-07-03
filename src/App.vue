@@ -33,7 +33,7 @@
       direction="vertical"
       :slides-per-view="1.2"
       :space-between="20"
-      class="h-[75vh] px-4 py-6"
+      class="h-[75vh] px-2 py-2"
       :centered-slides="true"
     >
       <SwiperSlide
