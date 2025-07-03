@@ -1,5 +1,5 @@
 <template>
-  <div class="p-4 rounded-2xl shadow bg-white border">
+  <div class="p-4 rounded-2xl shadow bg-white border w-full">
     <img
       v-if="equipment.imageUrl"
       :src="equipment.imageUrl"
