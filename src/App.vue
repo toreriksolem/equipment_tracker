@@ -1,7 +1,6 @@
 <template>
   <div class="bg-white py-2 flex flex-col items-center">
     <img src="/logo.png" alt="Logo" class="h-16 object-contain" />
-    <h1 class="text-xl font-bold text-[#706f6f] mt-1">🎛️ Teknikk 🎛️</h1>
   </div>
 
 
