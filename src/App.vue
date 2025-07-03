@@ -29,12 +29,21 @@
       </button>
     </div>
 
-    <Swiper direction="vertical"
-      :slides-per-view="1" :space-between="20" class="h-auto">
-      <SwiperSlide v-for="(item, index) in filteredList" :key="index" class="h-auto">
+    <Swiper
+      direction="vertical"
+      :slides-per-view="1.2"
+      :space-between="20"
+      class="h-auto"
+    >
+      <SwiperSlide
+        v-for="(item, index) in filteredList"
+        :key="index"
+        class="!h-auto"
+      >
         <EquipmentCard :equipment="item" @updated="fetchEquipment" />
       </SwiperSlide>
     </Swiper>
+
 
 
     <div class="fixed bottom-0 left-0 right-0 bg-black p-4 shadow-md space-y-2 z-40">
