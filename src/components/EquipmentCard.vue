@@ -4,7 +4,7 @@
       v-if="equipment.imageUrl"
       :src="equipment.imageUrl"
       alt="Equipment image"
-      class="w-full h-48 object-cover rounded mb-2"
+      class="w-full h-64 object-cover rounded mb-2"
     />
     <h2 class="text-xl font-bold">{{ equipment.name }}</h2>
     <p class="text-sm text-gray-600">{{ equipment.type }}</p>

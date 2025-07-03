@@ -1,7 +1,8 @@
 <template>
-  <div class="bg-black py-2 flex flex-col items-center">
-    <img src="/logo.png" alt="Logo" class="h-16 object-contain" />
+  <div class="bg-black flex flex-col items-center justify-end h-24 py-2">
+    <img src="/logo.png" alt="Logo" class="h-16 object-contain mb-2" />
   </div>
+
 
 
   <div class="min-h-screen bg-gray-100 p-4 pb-24">
